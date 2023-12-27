@@ -26,17 +26,13 @@ function HomePage1() {
     {/* {showNavBar ?   <>  <Header /> <NavBar /></> : <SideBar />} */}
 
 
-    <div
+    {/* <div
       className="d-flex flex-column flex-grow-1"
-      style={{ backgroundColor: "lightblack" }}
+      style={{fontFamily: 'Verdana', backgroundColor: "lightblack" }}
     >
       
       <div className="container-fluid HomePage1 row justify-content-center align-items-center">
-      {/* <div  >
-        <button onClick={toggleNavbar} style={{backgroundColor:primaryColor,color:secondaryColor}}>
-      {showNavBar ? 'Show SideBar' : 'Show NavBar'}
-    </button>
-    </div> */}
+      
         <div className="col-12 col-md-8 col-lg-6 text-center" style={{marginTop:'3%'}}>
         
           <img
@@ -48,17 +44,48 @@ function HomePage1() {
             className="mt-4 mb-5"
             style={{ color: primaryColor, fontSize: "48px", fontWeight: "bold" }}
           >
-            Welcome to GR Metal
+            Welcome to Complain Management System 
           </h1>
           <p
             style={{ color: "#444444", fontSize: "18px", lineHeight: "1.4" }}
           >
-           We specialize in providing a wide range of metals to meet your industrial and creative needs. From sturdy steel to lustrous aluminum, we're here to supply the building blocks of your projects.
+           A realm of boundless creativity and innovation, where art takes on new dimensions. Our passion is to transform imagination into exquisite visual masterpieces.
           </p>
         </div>
       </div>
       
+    </div> */}
+
+<div
+      className="d-flex flex-column flex-grow-1"
+      style={{ fontFamily: "Verdana", backgroundColor: "#ecf0f1", minHeight: "100vh" 
+      }}
+    >
+      <div className="container-fluid HomePage1 row justify-content-center align-items-center">
+        <div className="col-12 col-md-8 col-lg-6 text-center" style={{ marginTop: '1%'
+        , position: 'absolute', top: '55%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          <img
+            src={Metal}
+            alt="ITTEFAQ ELECTRONICS"
+            style={{ width: "33%", borderRadius: "50%", boxShadow: "0 22px 44px rgba(0, 0, 0, 0.3)" }}
+          />
+          <h1
+            className="mt-4 mb-5"
+            style={{ color: primaryColor, fontSize: "44px", fontWeight: "bold" }}
+          >
+            Welcome to the Complaint Management System
+          </h1>
+          <p
+            style={{ color: "#333", fontSize: "16px", lineHeight: "1.4" }}
+          >
+            A realm of boundless creativity and innovation, where art takes on new dimensions. Our passion is to transform imagination into exquisite visual masterpieces.
+          </p>
+        </div>
+      </div>
     </div>
+    
+
+  
     <Footer className="mt-auto fixed-bottom" />
   </>
   );

@@ -254,30 +254,30 @@ function Header( { id ,screen }) {
 const [totalItems, settotalItem] = useState([]);
 
 
-useEffect(() => {
-  fetch(`${apiLinks}/PendingOrder.php`)
-    .then((response) => response.json())
-    .then((apiData) => {
-      const transformedData = apiData.map((item) => ({
-          id : item.id,
+// useEffect(() => {
+//   fetch(`${apiLinks}/PendingOrder.php`)
+//     .then((response) => response.json())
+//     .then((apiData) => {
+//       const transformedData = apiData.map((item) => ({
+//           id : item.id,
          
       
-      }));
+//       }));
 
-      const columns = [
-        { label: "Order ID", field: "id", sort: "asc" },
+//       const columns = [
+//         { label: "Order ID", field: "id", sort: "asc" },
         
-        { label: "Edit ", field: "tedtdat", sort: "asc" },
+//         { label: "Edit ", field: "tedtdat", sort: "asc" },
 
 
-      ];
+//       ];
 
-      // setData({ columns, rows: transformedData });
+//       // setData({ columns, rows: transformedData });
        
-      settotalItem(apiData.length); 
-    })
-    .catch((error) => console.error(error));
-}, []);
+//       settotalItem(apiData.length); 
+//     })
+//     .catch((error) => console.error(error));
+// }, []);
 const totalItem = totalItems; // Replace with your actual total item count
 
   return (
@@ -312,7 +312,8 @@ const totalItem = totalItems; // Replace with your actual total item count
         
         <div className="btn-group">
         <h5 style={{ fontSize: "14px", marginTop: "10px" }}>
-          {moment().format("L")}
+          {moment().format("DD/MM/YYYY")
+}
         </h5>
           <button
             className="btn"

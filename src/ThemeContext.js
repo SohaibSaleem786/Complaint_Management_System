@@ -8,11 +8,13 @@ export function useTheme() {
 
 export function ThemeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [primaryColor, setPrimaryColor] = useState('#c88c23');
-  const [secondaryColor, setSecondaryColor] = useState('black');
+  // const [primaryColor, setPrimaryColor] = useState('#5271ff');
+  // const [secondaryColor, setSecondaryColor] = useState('#FFFFFF');
+  const [primaryColor, setPrimaryColor] = useState('#1a2b55');
+  const [secondaryColor, setSecondaryColor] = useState('white');
   const [navbarHeight, setNavbarHeight] = useState(30);
   const [pathHeight, setPathbarHeight] = useState(30);
-  const [apiLinks , setapiLinks] = useState('https://www.crystalsolutions.com.pk/grmetal');
+  const [apiLinks , setapiLinks] = useState('https://crystalsolutions.com.pk/complaint');
   
   // Toggle the theme
   const toggleTheme = () => {

@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-light text-center text-black fixed-bottom">
       <div
         className="text-center "
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", height: "30px" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", fontFamily: 'Verdana',height: "30px" }}
       >
         <a className="text-dark" href="">
           Privacy Policy
