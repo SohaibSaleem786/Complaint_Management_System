@@ -196,6 +196,7 @@ function Add_ComplainSheet() {
       warrtyy: selectedStatus,
       refidd: selectedReferanceId,
       prodidd: selectedProductId,
+      compidd: selectedCompalainId
     };
 
     setValues((prevState) => ({
@@ -215,12 +216,29 @@ function Add_ComplainSheet() {
       formData.append("prodid", value.prodidd);
       formData.append("invno", values.invnoo);
       formData.append("warrty", value.warrtyy);
-      formData.append("compid", values.compidd);
+      formData.append("compid", value.compidd);
       formData.append("remarks", values.remarkss);
       formData.append("purdate", "2023-11-11");
       formData.append("email", values.emaill);
       formData.append("serial", values.seriall);
 
+      console.log("mobile:", values.mobilee);
+      console.log("type:", value.typee);
+      console.log("name:", values.namee);
+      console.log("add1:", values.add11);
+      console.log("add2:", values.add22);
+      console.log("contact:", values.contactt);
+      console.log("refid:", value.refidd);
+      console.log("prodid:", value.prodidd);
+      console.log("invno:", values.invnoo);
+      console.log("warrty:", value.warrtyy);
+      console.log("compid:", '1');
+      console.log("remarks:", values.remarkss);
+      console.log("purdate:", "2023-11-11");
+      console.log("email:", values.emaill);
+      console.log("serial:", values.seriall);
+      
+      
       const response = await axios.post(`${apiLinks}/Complaint.php`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -836,8 +854,12 @@ function Add_ComplainSheet() {
                                   control: (provided) => ({
                                     ...provided,
                                     height: "2rem",
-                                    fontSize: "11px",
+                                    fontSize: "9px",
                                     width: "180px",
+                                  }),
+                                  option: (provided) => ({
+                                    ...provided,
+                                    fontSize: "10px", // Set the font size for dropdown values
                                   }),
                                 }}
                               />

@@ -219,16 +219,22 @@ function Header( { id ,screen }) {
   useEffect(() => {
     // Retrieve user data from local storage
     const userData = JSON.parse(localStorage.getItem("user"));
-
-    if (userData) {
+  
+    if (userData && userData.tusrid) {
       setUser(userData);
       console.log(userData);
-      console.log("user id is", userData.userid); // Updated to access the 'id' property
+      console.log("user id is", userData.userid);
     } else {
-      // Handle cases when user data is not available
-      console.error("User data not available in local storage.");
+      // Redirect to the login page if user data is not available
+      console.error("User data not available in local storage. Redirecting to login.");
+  
+      const redirectTimer = setTimeout(() => {
+        navigate("/login");
+      }, 100);
+  
+      return () => clearTimeout(redirectTimer);
     }
-  }, []);
+  }, [navigate]);
 
      /////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////

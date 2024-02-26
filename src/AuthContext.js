@@ -10,10 +10,16 @@ const AuthProvider = ({ children }) => {
 
   // You can fetch user data from local storage here or any other initial setup.
   useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const userData = JSON.parse(localStorage.getItem('user'));
-    setIsLoggedIn(loggedIn);
-    setUserData(userData);
+    try {
+      const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      const userData = JSON.parse(localStorage.getItem('user')) || null;
+
+      setIsLoggedIn(loggedIn);
+      setUserData(userData);
+    } catch (error) {
+      // Handle JSON parsing error if needed
+      console.error('Error parsing user data from local storage:', error);
+    }
   }, []);
 
   const login = (userData) => {

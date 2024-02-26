@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import '../Login/Login.css';
 import Shop from '../../../image/metal.jpg';
 import Metal from "../../../image/grmetal.png";
 import Crystal from "../../../image/logo.png";
@@ -49,7 +49,7 @@ function Login() {
           });
           setTimeout(() => {
             setAlertData(null);
-            navigate("/MainPage");
+            navigate("/MainPage " ,{replace: true });
           }, 500);
           // Display a success toast
           // toast.success("Login successful!", {
@@ -126,10 +126,13 @@ function Login() {
             src={Shop}
             alt="Login"
             className="login-image"
-            style={{ height: "78%", width: "100%" }}
+            style={{ height: "100vh", width: "100%" }}
           />
         </div>
-        <div className="col-6" style={{ padding: "4%" }}>
+        <div className="col-6" style={{ padding: "7vh"  ,position: "absolute",
+                top: "50%",
+                left: "75%",
+                transform: "translate(-50%, -50%)",}}>
           <div
             style={{
               borderTop: `3px solid ${primaryColor}`,
@@ -143,7 +146,7 @@ function Login() {
               <img
                 src={Metal}
                 alt="Login"
-                style={{ marginLeft: "6%", height: "200px", width: "50%" }}
+                style={{ marginLeft: "6%", height: "33vh", width: "50%" }}
               />
 
               <div>
@@ -151,12 +154,12 @@ function Login() {
                   type="text"
                   id="userid"
                   name="userid"
-                  ref={userid || Enter1}
+                  ref={userid }
                   style={{ width: "65%", padding: "2%", marginBottom: "2%" }}
                   placeholder="ID"
                   required
                   onKeyDown={(e) =>
-                    handleEnterKeyPress(Enter2, e)
+                    handleEnterKeyPress(password, e)
                   }
                 />
                 <br />
@@ -164,7 +167,7 @@ function Login() {
                   type="password"
                   id="password"
                   name="password"
-                  ref={password || Enter2}
+                  ref={password }
                   style={{ width: "65%", padding: "2%", marginBottom: "2%" }}
                   placeholder="Password"
                   required

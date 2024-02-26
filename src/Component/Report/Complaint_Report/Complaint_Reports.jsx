@@ -102,10 +102,12 @@ const Complaint_Report = () => {
   };
 
   const filteredRows = detailItem
-    ? detailItem.filter((item) =>
-        item.c_cust.toLowerCase().includes(searchText.toLowerCase())
-      )
-    : [];
+  ? detailItem.filter((item) =>
+      item.c_cust.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.c_mobile.toLowerCase().includes(searchText.toLowerCase())
+    )
+  : [];
+
 
   useEffect(() => {
     fetchMenuItems();
@@ -290,6 +292,23 @@ const Complaint_Report = () => {
       focusNextInput(ref);
     }
   };
+
+
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const rowHeight = 34; // Set this value based on your actual row height
+
+// Calculate the number of rows based on 70% of the viewport height
+const numberOfRows = Math.floor((0.7 * windowHeight) / rowHeight);
+
+// Generate the rows dynamically
+const blankRows = Array.from({ length: Math.max(0, numberOfRows - filteredRows.length) }).map((_, index) => (
+  <tr key={`blank-${index}`}>
+    {Array.from({ length: 9 }).map((_, colIndex) => (
+      <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
+    ))}
+  </tr>
+));
   return (
     <>
       <div
@@ -323,7 +342,7 @@ const Complaint_Report = () => {
           pageLink="/MainPage"
         />
 
-        <div className="Complaint_Report" style={{  marginTop: "1%",padding:'10px',border:'1px solid black' }}>
+        <div className="Complaint_Report" style={{  marginTop: "1%",padding:'10px',backgroundColor: "white",border:'1px solid black' }}>
           <Row>
             <Col xs={12} sm={6} md={4} lg={3} xl={3}>
               <div className="d-flex align-items-left">
@@ -590,14 +609,15 @@ const Complaint_Report = () => {
           <td style={{ textAlign: "center" }}>{item.c_sts}</td>
         </tr>
       ))}
-      {/* Blank rows to fill remaining space */}
-      {Array.from({ length: Math.max(0, 13 - filteredRows.length) }).map((_, index) => (
+      
+      {/* {Array.from({ length: Math.max(0, 13 - filteredRows.length) }).map((_, index) => (
         <tr key={`blank-${index}`}>
           {Array.from({ length: 9 }).map((_, colIndex) => (
             <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
           ))}
         </tr>
-      ))}
+      ))} */}
+       {blankRows}
 </MDBTableBody>
 
                   <MDBTableFoot

@@ -95,6 +95,22 @@ const Get_Installer = () => {
     }
   };
 
+
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const rowHeight = 40; // Set this value based on your actual row height
+
+// Calculate the number of rows based on 70% of the viewport height
+const numberOfRows = Math.floor((0.7 * windowHeight) / rowHeight);
+
+// Generate the rows dynamically
+const blankRows = Array.from({ length: Math.max(0, numberOfRows - filteredRows.length) }).map((_, index) => (
+  <tr key={`blank-${index}`}>
+    {Array.from({ length: 7 }).map((_, colIndex) => (
+      <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
+    ))}
+  </tr>
+));
   return (
     <>
       <Header />
@@ -114,6 +130,7 @@ const Get_Installer = () => {
             // maxWidth: "60%",
             padding: "20px",
             border: "1px solid gray",
+            backgroundColor: "white",
           }}
         >
           <Row>
@@ -220,14 +237,14 @@ const Get_Installer = () => {
                     ))}
                   </tr>
                 ))}
-                    {/* Blank rows to fill remaining space */}
-      {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
+      {/* {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
         <tr key={`blank-${index}`}>
           {Array.from({ length: 7 }).map((_, colIndex) => (
             <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
           ))}
         </tr>
-      ))}
+      ))} */}
+      {blankRows}
               </MDBTableBody>
               <MDBTableFoot
                 style={{ position: "sticky", bottom: 0, zIndex: 2 }}

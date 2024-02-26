@@ -282,8 +282,8 @@ function Add_Technical() {
               padding: "5px",
               backgroundColor: "#f5f5f5",
               minHeight: "100vh",
-              overflowY: "scroll", // Enable vertical scrolling
-              height: "calc(100vh - 200px)", // Set an appropriate height
+              overflowY: "scroll", 
+              height: "calc(100vh - 200px)", 
             }}
           >
             <div

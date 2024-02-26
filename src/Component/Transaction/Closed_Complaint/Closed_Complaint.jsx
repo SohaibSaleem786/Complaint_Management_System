@@ -125,6 +125,23 @@ const Closed_Complaint = () => {
     }
   };
 
+
+
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const rowHeight = 40; // Set this value based on your actual row height
+
+// Calculate the number of rows based on 70% of the viewport height
+const numberOfRows = Math.floor((0.7 * windowHeight) / rowHeight);
+
+// Generate the rows dynamically
+const blankRows = Array.from({ length: Math.max(0, numberOfRows - filteredRows.length) }).map((_, index) => (
+  <tr key={`blank-${index}`}>
+    {Array.from({ length: 8 }).map((_, colIndex) => (
+      <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
+    ))}
+  </tr>
+));
   return (
     <>
       <Header />
@@ -144,7 +161,7 @@ const Closed_Complaint = () => {
             // marginLeft: "15%",
             // marginRight: "15%",
             // maxWidth: "70%",
-            padding: "20px",
+            padding: "20px",backgroundColor: "white",
             border: "1px solid gray",
             //  position: 'absolute',
             //  top: '50%',
@@ -235,7 +252,7 @@ const Closed_Complaint = () => {
                               : columnIndex === 6
                               ? "8%"
                               : columnIndex === 7
-                              ? "1%"
+                              ? "10%"
                               
                               : "auto",
                         }}
@@ -245,13 +262,14 @@ const Closed_Complaint = () => {
                     ))}
                   </tr>
                 ))}
-                {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
+                {/* {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
         <tr key={`blank-${index}`}>
           {Array.from({ length: 8 }).map((_, colIndex) => (
             <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
           ))}
         </tr>
-      ))}
+      ))} */}
+       {blankRows}
               </MDBTableBody>
               <MDBTableFoot
                 style={{ position: "sticky", bottom: 0, zIndex: 2 }}

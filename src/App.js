@@ -50,6 +50,8 @@ import Update_TechnicianVisit from './Component/Transaction/Technician_Visit/Upd
 import Closed_Complaint from './Component/Transaction/Closed_Complaint/Closed_Complaint';
 import Update_ClosedComplaint from './Component/Transaction/Closed_Complaint/Update_CloseComplaint/Update_ClosedComplaint';
 import Complaint_Report from './Component/Report/Complaint_Report/Complaint_Reports';
+import Get_Comparison_Report from './Component/Report/Comparison_Report/Comparison_Report';
+import Item_Comparison_Report from './Component/Report/Item_Comparison_Report/Item_Comparison_Report ';
 
 
 function App() {
@@ -58,14 +60,14 @@ function App() {
        
 
       <div style={{ backgroundColor: '#edf2ff', minHeight: '100vh' }}>
-      <Router>
-    
+      <Router basename='/complaint/cms'>
+      
     <AuthProvider>
       {/* Use the ThemeProvider */}
       <ThemeProvider>
       <RowIdProvider>
       <Routes>
-<Route path="/complaint/cms" element={<Login />} />
+<Route path="/" element={<Login />} />
 <Route path="/login" element={<Login />} />
 <Route path="/MainPage" element={<HomePage1 />} />
 
@@ -147,6 +149,9 @@ function App() {
 {/* //////////////////// cOMPLAINT REPORTS ////////////////////////////// */}
 
 <Route path="/Complaint_Report" element={<Complaint_Report />} />
+<Route path="/Get_Comparison_Report" element={<Get_Comparison_Report />} />
+<Route path="/Item_Comparison_Report" element={<Item_Comparison_Report />} />
+
 
 
 

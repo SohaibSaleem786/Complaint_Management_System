@@ -77,7 +77,20 @@ const Get_Complain = () => {
       setSelectedRow(row.comid);
     }
   };
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const rowHeight = 40; // Set this value based on your actual row height
 
+// Calculate the number of rows based on 70% of the viewport height
+const numberOfRows = Math.floor((0.7 * windowHeight) / rowHeight);
+
+// Generate the rows dynamically
+const blankRows = Array.from({ length: Math.max(0, numberOfRows - filteredRows.length) }).map((_, index) => (
+  <tr key={`blank-${index}`}>
+    {Array.from({ length: 3 }).map((_, colIndex) => (
+      <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
+    ))}
+  </tr>
+));
   return (
     <>
       <Header />
@@ -95,7 +108,7 @@ const Get_Complain = () => {
             // marginLeft: "30%",
             // marginRight: "30%",
             // maxWidth: "40%",
-            padding: "20px",
+            padding: "20px",backgroundColor: "white",
             border: "1px solid gray",
           }}
         >
@@ -135,7 +148,7 @@ const Get_Complain = () => {
           >
             <MDBTable
               scrollY
-              maxHeight="61vh"
+              maxHeight="66vh"
               striped
               bordered
               small
@@ -189,13 +202,14 @@ const Get_Complain = () => {
                   </tr>
                 ))}
                     {/* Blank rows to fill remaining space */}
-      {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
+      {/* {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
         <tr key={`blank-${index}`}>
           {Array.from({ length: 3 }).map((_, colIndex) => (
             <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
           ))}
         </tr>
-      ))}
+      ))} */}
+      {blankRows}
               </MDBTableBody>
 
               <MDBTableFoot

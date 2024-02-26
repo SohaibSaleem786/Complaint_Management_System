@@ -2,6 +2,27 @@
 
 
 
+/* Original styles */
+.login-image {
+  height: 78%;
+  width: 100%;
+}
+
+/* Updated styles for responsiveness */
+.login-image {
+  height: 100%; /* Adjust as needed */
+  width: 100%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .col-6 {
+    width: 100%; /* Full width on smaller screens */
+    padding: 2%;
+  }
+
+  /* Adjust other styles as needed for smaller screens */
+}
 
 
 

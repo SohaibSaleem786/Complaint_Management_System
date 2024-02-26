@@ -295,9 +295,9 @@
   /* Large screen styles */
   @media (min-width: 768px) {
     .Complaint_Sheet {
-      margin-left: 20%;
-      margin-right: 20%;
-      max-width: 60%;
+      margin-left: 15%;
+      margin-right: 15%;
+      max-width: 70%;
     }
   }
 
@@ -447,6 +447,80 @@
   /* Large screen styles */
   @media (min-width: 768px) {
     .Complaint_Report {
+      margin-left: 15%;
+      margin-right: 15%;
+      max-width: 70%;
+      font-size: 12px;
+
+    }
+  }
+
+
+
+  .form-control {
+    font-size: 12px;
+  }
+
+
+
+
+
+
+
+                  /* //////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  ////////////////// Comparison_Report  ////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////// */
+  
+  /* Small screen styles */
+  @media (max-width: 767px) {
+    .Comparison_Report {
+      margin-left: 5%;
+      margin-right: 5%;
+      max-width: 90%;
+      font-size: 11px;
+    }
+  }
+  
+  /* Large screen styles */
+  @media (min-width: 768px) {
+    .Comparison_Report {
+      margin-left: 20%;
+      margin-right: 20%;
+      max-width: 60%;
+      font-size: 12px;
+
+    }
+  }
+
+
+
+  .form-control {
+    font-size: 12px;
+  }
+
+
+
+                    /* //////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  ////////////////// Item_Comparison_Report  ////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////// */
+  
+  /* Small screen styles */
+  @media (max-width: 767px) {
+    .Item_Comparison_Report {
+      margin-left: 5%;
+      margin-right: 5%;
+      max-width: 90%;
+      font-size: 11px;
+    }
+  }
+  
+  /* Large screen styles */
+  @media (min-width: 768px) {
+    .Item_Comparison_Report {
       margin-left: 15%;
       margin-right: 15%;
       max-width: 70%;

@@ -31,7 +31,7 @@ function PathHead({ pageName, screen ,pageLink}) {
   <div className="col-12" style={{ display: "flex", alignItems: "center" }}>
     {screen === "Item" || screen === "Get_Item" || screen === "Update_Item" ? (
       <img
-  onClick={() => navigate(pageLink)}  // Use the pageLink parameter to navigate
+  onClick={() => navigate(pageLink , { replace: true })}  // Use the pageLink parameter to navigate
   src={Back}
   alt="Login"
   className="login-image"

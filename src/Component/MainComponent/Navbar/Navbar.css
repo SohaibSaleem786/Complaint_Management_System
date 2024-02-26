@@ -1,5 +1,44 @@
 
 
+.sub-dropdown-toggle {
+  color: rgb(0, 0, 0) !important;
+  width: 100%;
+  text-align: left !important;
+  font-size: 12px !important;
+  transition: none !important;
+  padding: 2px 10px !important;
+  border-radius: 5px !important;
+}
+
+.sub-dropdown-toggle:hover {
+  background-color: var(--secondary-color)!important;
+}
+.custom-dropdown-item {
+  background-color: var(--accent-color) !important;
+  border: 0 !important;
+  color: rgb(0, 0, 0) !important;
+  font-size: 12px;
+  padding: 2px 10px !important;
+  border-radius: 5px !important;
+}
+
+.sub-dropdown-item {
+  background-color: var(--accent-color) !important;
+  border: 0 !important;
+  color: rgb(0, 0, 0) !important;
+  font-size: 12px;
+  padding: 2px 10px !important;
+}
+
+
+/* .sub-dropdown-item{
+
+  margin-top: -10px !important;
+} */
+
+
+
+
 /* Add custom styling for your navbar */
 .custom-navbar {
   background-color: #cecece; /* Set your desired background color */

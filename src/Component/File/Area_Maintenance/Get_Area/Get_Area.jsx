@@ -78,6 +78,21 @@ const Get_Area = () => {
     }
   };
 
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const rowHeight = 40; // Set this value based on your actual row height
+
+// Calculate the number of rows based on 70% of the viewport height
+const numberOfRows = Math.floor((0.7 * windowHeight) / rowHeight);
+
+// Generate the rows dynamically
+const blankRows = Array.from({ length: Math.max(0, numberOfRows - filteredRows.length) }).map((_, index) => (
+  <tr key={`blank-${index}`}>
+    {Array.from({ length: 4 }).map((_, colIndex) => (
+      <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
+    ))}
+  </tr>
+));
   return (
     <>
       <Header />
@@ -96,7 +111,7 @@ const Get_Area = () => {
             // marginRight: "30%",
             // maxWidth: "40%",
             padding: "20px",
-            border: "1px solid gray",
+            border: "1px solid gray",backgroundColor: "white",
           }}
         >
           <Row>
@@ -135,7 +150,7 @@ const Get_Area = () => {
           >
             <MDBTable
               scrollY
-              maxHeight="61vh"
+              maxHeight="66vh"
               striped
               bordered
               small
@@ -194,13 +209,14 @@ const Get_Area = () => {
                     })}
                   </tr>
                 ))}
-                {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
+                {/* {Array.from({ length: Math.max(0, 11 - filteredRows.length) }).map((_, index) => (
         <tr key={`blank-${index}`}>
           {Array.from({ length: 4 }).map((_, colIndex) => (
             <td key={`blank-${index}-${colIndex}`}>&nbsp;</td>
           ))}
         </tr>
-      ))}
+      ))} */}
+      {blankRows}
               </MDBTableBody>
 
               <MDBTableFoot

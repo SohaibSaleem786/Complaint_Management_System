@@ -1307,10 +1307,10 @@ function Update_TechnicianVisit() {
                                 //   ref={statusRef}
                               >
                                 <option value="Select">Select Option</option>
-                                <option value="pending">Pending</option>
-                                <option value="solved">Solved</option>
-                                <option value="not_solved">Not Solved</option>
-                                <option value="closed">Closed</option>
+                                {/* <option value="PENDING">PENDING</option> */}
+                                <option value="SOLVED">SOLVED</option>
+                                <option value="NOT SOLVED">NOT SOLVED</option>
+                                <option value="CLOSED">CLOSED</option>
                               </Form.Control>
                             </Form.Group>
                           </td>
